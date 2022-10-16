@@ -8,5 +8,7 @@ RUN apk add --no-cache --update \
   mingw-w64-gcc make cmake \
   sdl2-dev sdl2_mixer-dev
 
+ENV CC="x86_64-w64-mingw32-gcc"
+
 # set working directory
 WORKDIR /src
