@@ -20,25 +20,25 @@
 
 #include "useful.h"
 
-unsigned short tiles_low[0x100 * 0x100];
-unsigned short tiles_middle[0x100 * 0x100];
-unsigned short tiles_middle_overlay[0x100 * 0x100];
-unsigned short tiles_high[0x100 * 0x100];
-unsigned short tiles_overlay[0x100 * 0x100];
+extern unsigned short tiles_low[0x100 * 0x100];
+extern unsigned short tiles_middle[0x100 * 0x100];
+extern unsigned short tiles_middle_overlay[0x100 * 0x100];
+extern unsigned short tiles_high[0x100 * 0x100];
+extern unsigned short tiles_overlay[0x100 * 0x100];
 
-char *active_text;
-int active_text_x;
-int active_text_y;
+extern char *active_text;
+extern int active_text_x;
+extern int active_text_y;
 
-void init_screen();
-int draw_screen();
-void screen_transition_in();
-void screen_transition_out();
+extern void init_screen();
+extern int draw_screen();
+extern void screen_transition_in();
+extern void screen_transition_out();
 
-u32 SCREEN_WIDTH;
-u32 SCREEN_HEIGHT;
+extern u32 SCREEN_WIDTH;
+extern u32 SCREEN_HEIGHT;
 
-int SCREEN_SHIFT_X;
-int SCREEN_SHIFT_Y;
-u8 SCREEN_FADE_LEVEL;
-u16 TARGET_TICK_FPS;
+extern int SCREEN_SHIFT_X;
+extern int SCREEN_SHIFT_Y;
+extern u8 SCREEN_FADE_LEVEL;
+extern u16 TARGET_TICK_FPS;

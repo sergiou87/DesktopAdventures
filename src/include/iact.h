@@ -23,8 +23,7 @@
 
 #include "useful.h"
 
-enum IACT_CMDS
-{
+extern enum IACT_CMDS {
     IACT_CMD_SetMapTile,
     IACT_CMD_ClearTile,
     IACT_CMD_MoveMapTile,
@@ -65,8 +64,7 @@ enum IACT_CMDS
     IACT_CMD_AddHealth,
 } IACT_CMD;
 
-enum IACT_TRIGGERS
-{
+extern enum IACT_TRIGGERS {
     IACT_TRIG_FirstEnter,
     IACT_TRIG_Enter,
     IACT_TRIG_BumpTile,
@@ -105,7 +103,7 @@ enum IACT_TRIGGERS
     IACT_TRIG_ExperienceGt,
 } IACT_TRIGGER;
 
-u16 iact_trig_clear_exempt[0x24];
+extern u16 iact_trig_clear_exempt[0x24];
 void item_select_prompt(u16 x, u16 y, u16 item);
 
 void read_iact();
@@ -115,4 +113,4 @@ void print_iact_stats();
 void iact_set_trigger(u8 trigger, u8 count, ...);
 void iact_update();
 
-#endif //DESKTOPADVENTURES_IACT_H
+#endif // DESKTOPADVENTURES_IACT_H

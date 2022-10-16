@@ -41,4 +41,4 @@ typedef struct ipuz_element
     u32 item_b;
 } ipuz_element;
 
-ipuz_element **ipuz_data;
+extern ipuz_element **ipuz_data;

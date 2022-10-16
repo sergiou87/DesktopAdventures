@@ -37,19 +37,19 @@ void item_dragging(u16 item);
 void reset_input_state();
 void update_input();
 
-int CURRENT_ITEM_DRAGGED;
+extern int CURRENT_ITEM_DRAGGED;
 
-u8 BUTTON_DOWN_STATE;
-u8 BUTTON_UP_STATE;
-u8 BUTTON_LEFT_STATE;
-u8 BUTTON_RIGHT_STATE;
-u8 BUTTON_PUSH_STATE;
-u8 BUTTON_FIRE_STATE;
-u8 BUTTON_LCLICK_STATE;
-u8 BUTTON_RCLICK_STATE;
+extern u8 BUTTON_DOWN_STATE;
+extern u8 BUTTON_UP_STATE;
+extern u8 BUTTON_LEFT_STATE;
+extern u8 BUTTON_RIGHT_STATE;
+extern u8 BUTTON_PUSH_STATE;
+extern u8 BUTTON_FIRE_STATE;
+extern u8 BUTTON_LCLICK_STATE;
+extern u8 BUTTON_RCLICK_STATE;
 
-bool MOUSE_MOVED;
-int MOUSE_X;
-int MOUSE_Y;
+extern bool MOUSE_MOVED;
+extern int MOUSE_X;
+extern int MOUSE_Y;
 
 #endif

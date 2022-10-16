@@ -22,8 +22,8 @@
 #include <stddef.h>
 
 #ifdef RENDER_GL
-    #include <GL/gl.h>
-    GLuint texture[0x2001];
+#include <GL/gl.h>
+GLuint texture[0x2001];
 #endif
 
 bool load_resources();
@@ -54,12 +54,12 @@ typedef struct izon_data
     u32 iact_offsets[0x100];
 } izon_data;
 
-//static const u8* yodesk_palette;
-void *texture_buffers[0x2001];
-u32 tile_metadata[0x2000];
-u8 ASSETS_LOADING;
-float ASSETS_PERCENT;
-izon_data **zone_data;
-u16 NUM_MAPS;
-u8 load_demo;
-u8 is_yoda;
+// static const u8* yodesk_palette;
+extern void *texture_buffers[0x2001];
+extern u32 tile_metadata[0x2000];
+extern u8 ASSETS_LOADING;
+extern float ASSETS_PERCENT;
+extern izon_data **zone_data;
+extern u16 NUM_MAPS;
+extern u8 load_demo;
+extern u8 is_yoda;

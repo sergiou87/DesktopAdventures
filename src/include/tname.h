@@ -20,4 +20,4 @@
 
 #include "useful.h"
 
-char *tile_names[0x10000];
+extern char *tile_names[0x10000];

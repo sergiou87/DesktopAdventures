@@ -27,6 +27,6 @@ void sound_init();
 void sound_play(u16 id);
 void sound_exit();
 
-char **sound_files;
+extern char **sound_files;
 
 #endif

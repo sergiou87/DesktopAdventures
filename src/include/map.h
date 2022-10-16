@@ -27,10 +27,10 @@
 
 enum area_types
 {
- DESERT = 0x1,
- SNOW,
- FOREST,
- SWAMP = 0x5
+    DESERT = 0x1,
+    SNOW,
+    FOREST,
+    SWAMP = 0x5
 };
 
 enum map_flags
@@ -39,7 +39,7 @@ enum map_flags
     MAP_FLAG_FINAL_DESTINATION,
     MAP_FLAG_ITEM_FOR_ITEM,
     MAP_FLAG_FIND_SOMETHING_USEFUL_NPC,
-    MAP_FLAG_ITEM_TO_PASS, //Seen in map 99
+    MAP_FLAG_ITEM_TO_PASS, // Seen in map 99
     MAP_FLAG_FROM_ANOTHER_MAP,
     MAP_FLAG_TO_ANOTHER_MAP,
     MAP_FLAG_INDOORS,
@@ -50,13 +50,12 @@ enum map_flags
     MAP_FLAG_VICTORY_SCREEN,
     MAP_FLAG_LOSS_SCREEN,
     MAP_FLAG_MAP_TO_ITEM_FOR_LOCK,
-    MAP_FLAG_FIND_SOMETHING_USEFUL_DROP, //Or building?
+    MAP_FLAG_FIND_SOMETHING_USEFUL_DROP, // Or building?
     MAP_FLAG_FIND_SOMETHING_USEFUL_BUILDING,
     MAP_FLAG_FIND_THE_FORCE,
 };
 
-enum MAP_LAYER
-{
+extern enum MAP_LAYER {
     LAYER_LOW,
     LAYER_MIDDLE,
     LAYER_HIGH,
@@ -155,8 +154,8 @@ bool map_all_entities_active_visible();
 void read_iact_stats(u16 map_num, u32 location, u16 num_iacts);
 void print_iact_stats();
 
-u32 map_camera_x;
-u32 map_camera_y;
-bool map_camera_locked;
+extern u32 map_camera_x;
+extern u32 map_camera_y;
+extern bool map_camera_locked;
 
 #endif

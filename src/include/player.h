@@ -23,8 +23,7 @@
 
 #include "character.h"
 
-enum MAP_CHANGE_REASON
-{
+extern enum MAP_CHANGE_REASON {
     MAP_CHANGE_NONE,
     MAP_CHANGE_DOOR_IN,
     MAP_CHANGE_DOOR_OUT,
@@ -48,14 +47,14 @@ void player_goto_door_in();
 void player_update();
 void player_init();
 
-entity player_entity;
-u16 player_experience;
-u16 *player_inventory;
-u16 player_inventory_count;
-u16 PLAYER_EQUIPPED_ITEM;
-bool player_position_updated;
-u16 PLAYER_MAP_CHANGE_TO;
-u8 PLAYER_MAP_CHANGE_REASON;
-int CURRENT_ITEM_DRAGGED;
+extern entity player_entity;
+extern u16 player_experience;
+extern u16 *player_inventory;
+extern u16 player_inventory_count;
+extern u16 PLAYER_EQUIPPED_ITEM;
+extern bool player_position_updated;
+extern u16 PLAYER_MAP_CHANGE_TO;
+extern u8 PLAYER_MAP_CHANGE_REASON;
+extern int CURRENT_ITEM_DRAGGED;
 
 #endif
