@@ -19,13 +19,15 @@ ELSE(SDL2_Mixer_INCLUDE_DIRS)
     /usr/lib
     /usr/local/lib
     /sw/lib
-  ) 
+    /usr/x86_64-w64-mingw32/lib
+  )
   SET(TRIAL_INCLUDE_PATHS
     $ENV{SDL2_MIXER_HOME}/include/SDL2
     /usr/include/SDL2
     /usr/local/include/SDL2
     /sw/include/SDL2
-  ) 
+    /usr/x86_64-w64-mingw32/include/SDL2
+  )
 
   FIND_LIBRARY(SDLMIXER_LIBRARY SDL2_mixer ${TRIAL_LIBRARY_PATHS})
   FIND_PATH(SDLMIXER_INCLUDE_DIR SDL_mixer.h ${TRIAL_INCLUDE_PATHS})
