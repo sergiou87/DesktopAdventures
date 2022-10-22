@@ -14,13 +14,20 @@ if (EMSCRIPTEN)
     set(CMAKE_EXECUTABLE_SUFFIX ".html")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s USE_SDL=2 -s USE_SDL_MIXER=2 --use-preload-plugins --preload-file YodaDemo.dta")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s USE_SDL=2 -s USE_SDL_MIXER=2 --use-preload-plugins --preload-file YodaDemo.dta")
-else(EMSCRIPTEN)
+elseif(WIN32)
+    message("Building for Windows")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I/usr/x86_64-w64-mingw32/include/SDL2 -Dmain=SDL_main")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -I/usr/x86_64-w64-mingw32/include/SDL2 -Dmain=SDL_main")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L/usr/x86_64-w64-mingw32/lib -mwindows")
+    set(SDL2_LIBRARIES mingw32 SDL2main SDL2 SDL2_mixer)
+else()
+    message("Looking for SDL2 packages...")
     find_package(SDL2 REQUIRED)
     include_directories(${SDL2_INCLUDE_DIR}/..)
     find_package(SDL2_mixer REQUIRED)
     include_directories(${SDLMIXER_INCLUDE_DIR}/..)
     add_definitions(-DDAT_IN_RAM)
-endif(EMSCRIPTEN)
+endif()
 
 include_directories(${DesktopAdventures_SOURCE_DIR}/src/include)
 include_directories(${DesktopAdventures_SOURCE_DIR}/src/pc/)
@@ -46,6 +53,7 @@ set(SOURCE_FILES
     src/include/sound.h
     src/include/tile.h
     src/include/tname.h
+    src/tname.c
     src/ui.c
     src/include/ui.h
     src/include/useful.h
@@ -60,4 +68,6 @@ add_definitions(-DRENDER_BUFFER)
 set( CMAKE_VERBOSE_MAKEFILE on )
 
 add_executable(DesktopAdventures ${SOURCE_FILES})
-target_link_libraries(DesktopAdventures ${SDL2_LIBRARY} ${SDLMIXER_LIBRARY} ${OPENGL_LIBRARY})
+target_link_libraries(DesktopAdventures
+    ${SDL2_LIBRARIES}
+)

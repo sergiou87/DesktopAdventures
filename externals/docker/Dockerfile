@@ -21,6 +21,7 @@ RUN wget https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.2
   && make cross
 
 ENV CC="x86_64-w64-mingw32-gcc --sysroot=/usr/x86_64-w64-mingw32"
+ENV PATH="${PATH}:/usr/x86_64-w64-mingw32/bin"
 
 # set working directory
 WORKDIR /src

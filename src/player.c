@@ -40,6 +40,7 @@ u16 *player_inventory;
 u16 player_inventory_count;
 u16 PLAYER_EQUIPPED_ITEM = -1;
 
+entity player_entity;
 u16 player_experience = 0;
 
 u8 PLAYER_MAP_CHANGE_REASON = 0;
